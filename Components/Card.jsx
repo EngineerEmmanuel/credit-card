@@ -3,8 +3,7 @@ import Image from "next/image";
 import cardBar from "../Images/main bar.png";
 import { useState } from "react";
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-// icons
-// import {FaCaretRight} from "react-icons/fa";
+
 
 const Card = () => {
     const [isCardNumberInputFieldEmpty, setIsCardNumberInputFieldEmpty ]=useState(true);
@@ -13,6 +12,7 @@ const Card = () => {
     const [invalidCardNumberErrorMessage, setInvalidCardNumberErrorMessage]=useState("")
     const [invalidCvcErrorMessage,setInvalidCvcErrorMessage ] = useState(" ")
     const [checkCvcNumber, setCheckCvcNumber]=useState(" ");
+    const [name, setName]=useState(" ");
     
     
     
@@ -46,11 +46,11 @@ const Card = () => {
     }
     return ( 
         <section >
-            <main className=" flex justify-center  w-full h-screen bg-backGroundColor  ">
+            <main className=" flex justify-center  w-full h-auto bg-backGroundColor md:h-fill lg:h-fill lg:bg-cover xl:bg-cover ">
             {/* credit grid container */}
-            <div className=" grid grid-cols-2 items-center mt-20  w-3/6 h-5/6 ">
+            <div className=" flex flex-col-reverse m-3 h-auto  md:w-5/6 md:h-5/6  md:grid grid-cols-2 items-center  md:mt-20  md:w-3/6 sm:h-5/6   lg:w-3/6 lg:h-5/6  xl:w-3/6   ">
                 {/* credit card left container */}
-                <div className="h-full   p-6 bg-leftCardbg text-white rounded-tl-lg rounded-bl-lg">
+                <div className=" w-full h-full   p-6 bg-leftCardbg text-white rounded-tl-lg rounded-bl-lg sm:h-full md:w-auto  lg:h-full">
                     {/* left container informations */}
                     <div>
                         {/* main card container */}
@@ -72,7 +72,7 @@ const Card = () => {
                     {/* form */}
                     <form action="" className="flex flex-col gap-y-2 text-textColor mt-10">
                         <label for="name">Name of credit card owner</label>
-                        <input type="text" id="name" className="bg-inputbg p-2 rounded-lg border border-inputbg  focus:outline-none border focus:border-inputFocusBg"/>
+                        <input type="text" id="name" onChange={(e)=>setName(e.target.value)} value={name} className="bg-inputbg p-2 rounded-lg border border-inputbg  focus:outline-none border focus:border-inputFocusBg"/>
                         <label for="number">Card number</label>
                         <input type="number" id="number" onChange={getCurrentCardInputNumber} value={currentCardInputNumber} max={1-16} className="bg-inputbg p-2 rounded-lg border border-inputbg  focus:outline-none border focus:border-inputFocusBg "/>
                         <p className="text-red-500">{invalidCardNumberErrorMessage}</p>
@@ -88,7 +88,7 @@ const Card = () => {
                     </form>
                 </div>
                 {/* credit card right container */}
-                <div className=" h-full   bg-cardRightBgImage bg-cover  rounded-tr-lg rounded-br-lg">
+                <div className=" w-full h-full bg-cardRightBgImage bg-cover  rounded-tr-lg rounded-br-lg">
                     {/* text container */}
                     <div className=" h-full flex justify-center flex-col bg-gradient-to-br  from-leftCardbg to-transparent rounded-tr-lg relative">
                         <h4 className="text-center text-white text-xl">Title</h4>

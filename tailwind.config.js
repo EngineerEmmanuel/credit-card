@@ -27,6 +27,11 @@ module.exports = {
       },
       fontSize:{
         'special': '10px',
+      },
+      screens:{
+        'md':'771px',
+        'xl':'1029px',
+        '2xl':'1043px'
       }
     },
   },
