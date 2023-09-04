@@ -46,7 +46,7 @@ const Card = () => {
     }
     return ( 
         <section >
-            <main className=" flex justify-center  w-full h-auto bg-backGroundColor md:h-fill lg:h-fill lg:bg-cover xl:bg-cover ">
+            <main className=" flex justify-center  w-full h-auto  md:h-fill lg:h-fill lg:bg-cover xl:bg-cover ">
             {/* credit grid container */}
             <div className=" flex flex-col-reverse m-3 h-auto  md:w-5/6 md:h-5/6  md:grid grid-cols-2 items-center  md:mt-20  md:w-3/6 sm:h-5/6   lg:w-3/6 lg:h-5/6  xl:w-3/6   ">
                 {/* credit card left container */}
@@ -62,7 +62,7 @@ const Card = () => {
                                 <p className=" text-xl mt-3"> {isCardNumberInputFieldEmpty?"1234 5678 9012 3456": currentCardInputNumber} </p>
                                 {/* expiration container */}
                                 <div className="flex items-center absolute right-5">
-                                <p className="text-xs text-special text-textColor"> VALID THRU </p>
+                                <p className=" text-special text-textColor"> VALID <br/> THRU </p>
                                 <ArrowRightIcon />
                                 <p  className="text-xl">01/80</p>
                                 </div>
@@ -88,7 +88,7 @@ const Card = () => {
                     </form>
                 </div>
                 {/* credit card right container */}
-                <div className=" w-full h-full bg-cardRightBgImage bg-cover  rounded-tr-lg rounded-br-lg">
+                <div className=" hidden w-full h-full bg-cardRightBgImage bg-cover  rounded-tr-lg rounded-br-lg md:block">
                     {/* text container */}
                     <div className=" h-full flex justify-center flex-col bg-gradient-to-br  from-leftCardbg to-transparent rounded-tr-lg relative">
                         <h4 className="text-center text-white text-xl">Title</h4>

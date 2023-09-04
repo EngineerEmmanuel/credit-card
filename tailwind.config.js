@@ -26,7 +26,7 @@ module.exports = {
         backGroundColor:'#1A1B23'
       },
       fontSize:{
-        'special': '10px',
+        'special': '7px',
       },
       screens:{
         'md':'771px',
